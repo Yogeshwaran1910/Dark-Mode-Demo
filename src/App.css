@@ -97,3 +97,59 @@
 .activity ul li {
   margin: 12px 0;
 }
+/* ---------------- MOBILE VIEW ---------------- */
+@media (max-width: 768px) {
+
+  /* Layout */
+  .app {
+    flex-direction: column;
+  }
+
+  /* Sidebar → Top Menu */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .sidebar nav {
+    display: none; /* hide links */
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  /* Main */
+  .main {
+    padding: 20px;
+  }
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .theme-btn {
+    width: 100%;
+  }
+
+  /* Stats Cards */
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  /* Activity */
+  .activity {
+    padding: 20px;
+  }
+}
