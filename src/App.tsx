@@ -1,4 +1,12 @@
 import { useTheme } from "./context/ThemeContext";
+import {
+  FiMoon,
+  FiSun,
+  FiSmartphone,
+  FiZap,
+  FiShield,
+  FiArrowRight,
+} from "react-icons/fi";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -6,73 +14,54 @@ const App: React.FC = () => {
 
   return (
     <div className={`app ${theme}`}>
-      {/* Sidebar */}
-      <aside className="sidebar">
-        <h2 className="logo">⚡ DashUI</h2>
-        <nav>
-          <a className="active">🏠 Dashboard</a>
-          <a>📊 Analytics</a>
-          <a>👤 Users</a>
-          <a>⚙ Settings</a>
-        </nav>
-      </aside>
+      {/* Header */}
+      <header className="header">
+        <h1 className="logo">CleanUI</h1>
+        <button className="theme-btn" onClick={toggleTheme}>
+          {theme === "light" ? <FiMoon /> : <FiSun />}
+        </button>
+      </header>
 
-      {/* Main Content */}
-      <main className="main">
-        {/* Navbar */}
-        <header className="navbar">
-          <h1>Dashboard Overview</h1>
-          <button className="theme-btn" onClick={toggleTheme}>
-            {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
-          </button>
-        </header>
+      {/* Hero */}
+      <section className="hero">
+        <h2>
+          Simple. Clean. <span>Modern UI</span>
+        </h2>
+        <p>
+          A minimal React interface with elegant dark and light modes,
+          designed for clarity and performance.
+        </p>
 
-        {/* Stats Cards */}
-        <section className="stats">
-          <div className="stat-card">
-            <span>👥</span>
-            <div>
-              <h3>12,450</h3>
-              <p>Total Users</p>
-            </div>
-          </div>
+        <button className="cta-btn">
+          Get Started <FiArrowRight />
+        </button>
+      </section>
 
-          <div className="stat-card">
-            <span>💰</span>
-            <div>
-              <h3>$38,200</h3>
-              <p>Revenue</p>
-            </div>
-          </div>
+      {/* Features */}
+      <section className="features">
+        <div className="feature">
+          <FiZap className="icon" />
+          <h3>Fast Experience</h3>
+          <p>Optimized UI with smooth transitions and clean layout.</p>
+        </div>
 
-          <div className="stat-card">
-            <span>📈</span>
-            <div>
-              <h3>89,120</h3>
-              <p>Sessions</p>
-            </div>
-          </div>
+        <div className="feature">
+          <FiSmartphone className="icon" />
+          <h3>Mobile First</h3>
+          <p>Designed to look great on all screen sizes.</p>
+        </div>
 
-          <div className="stat-card">
-            <span>⚠️</span>
-            <div>
-              <h3>23</h3>
-              <p>Errors</p>
-            </div>
-          </div>
-        </section>
+        <div className="feature">
+          <FiShield className="icon" />
+          <h3>Reliable Design</h3>
+          <p>Professional structure suitable for real applications.</p>
+        </div>
+      </section>
 
-        {/* Activity Section */}
-        <section className="activity">
-          <h2>Recent Activity</h2>
-          <ul>
-            <li>✅ New user registered</li>
-            <li>💳 Payment received</li>
-            <li>📈 Traffic spike detected</li>
-            <li>⚠ Server warning resolved</li>
-          </ul>
-        </section>
-      </main>
+      {/* Footer */}
+      <footer className="footer">
+        <p>© 2025 CleanUI • Built with React</p>
+      </footer>
     </div>
   );
 };
